@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/11/2018 10:17:14 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.expediente.clinico.model.Municipio" table="municipio" schema="public" optimistic-lock="version">
+        <id name="codigo" type="string">
+            <column name="codigo" length="3" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="estado" class="com.expediente.clinico.model.Estado" fetch="select">
+            <column name="codigoestado" length="3" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="40" not-null="true" />
+        </property>
+        <set name="localidads" table="localidad" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="codigomunicipio" length="3" not-null="true" />
+            </key>
+            <one-to-many class="com.expediente.clinico.model.Localidad" />
+        </set>
+    </class>
+</hibernate-mapping>
