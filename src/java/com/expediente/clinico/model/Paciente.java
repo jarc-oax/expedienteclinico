@@ -1,5 +1,6 @@
 package com.expediente.clinico.model;
 
+import com.expediente.clinico.model.common.RegistroModel;
 import java.util.Date;
 
 public class Paciente  implements java.io.Serializable, RegistroModel {
