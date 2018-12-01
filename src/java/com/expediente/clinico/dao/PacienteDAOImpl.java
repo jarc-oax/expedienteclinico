@@ -16,16 +16,16 @@ public class PacienteDAOImpl implements PacienteDAO{
     }
 
     @Override
-    public void elimianrRegistro(Paciente paciente) {
+    public void eliminarRegistro(Paciente paciente) {
     }
 
     @Override
-    public List<Paciente> obtenerPacientes() {
+    public List<Paciente> obtenerRegistros() {
         return null;
     }
 
     @Override
-    public Paciente obtenerPaciente(Long idPaciente) {
+    public Paciente obtenerRegistro(Long idPaciente) {
         return null;
     }
     

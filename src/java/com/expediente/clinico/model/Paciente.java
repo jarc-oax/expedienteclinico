@@ -2,7 +2,7 @@ package com.expediente.clinico.model;
 
 import java.util.Date;
 
-public class Paciente  implements java.io.Serializable {
+public class Paciente  implements java.io.Serializable, RegistroModel {
 
 
      private long idPaciente;
@@ -87,6 +87,15 @@ public class Paciente  implements java.io.Serializable {
     
     public void setSexo(Boolean sexo) {
         this.sexo = sexo;
+    }
+
+    @Override
+    public Long getId() {
+        return null;
+    }
+
+    @Override
+    public void setId() {
     }
 }
 

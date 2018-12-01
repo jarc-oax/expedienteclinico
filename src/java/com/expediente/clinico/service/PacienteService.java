@@ -2,12 +2,9 @@
 package com.expediente.clinico.service;
 
 import com.expediente.clinico.model.Paciente;
+import com.expediente.clinico.service.common.RegistroService;
 import java.util.List;
 
-public interface PacienteService {
-   public void crearRegistro(Paciente paciente); 
-   public void actualizarRegistro(Paciente paciente);
-   public void elimianrRegistro(Paciente paciente);
-   public List<Paciente> obtenerPacientes();
-   public Paciente obtenerPaciente(Long idPaciente);
+public interface PacienteService extends RegistroService<Paciente>{
+   public List<Paciente> obtenerPacientesMayores();
 }

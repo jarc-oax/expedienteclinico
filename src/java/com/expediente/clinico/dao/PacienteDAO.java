@@ -7,7 +7,7 @@ import java.util.List;
 public interface PacienteDAO {
    public void crearRegistro(Paciente paciente); 
    public void actualizarRegistro(Paciente paciente);
-   public void elimianrRegistro(Paciente paciente);
-   public List<Paciente> obtenerPacientes();
-   public Paciente obtenerPaciente(Long idPaciente);
+   public void eliminarRegistro(Paciente paciente);
+   public List<Paciente> obtenerRegistros();
+   public Paciente obtenerRegistro(Long idPaciente);
 }

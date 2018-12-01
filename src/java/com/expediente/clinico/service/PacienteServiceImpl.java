@@ -15,17 +15,21 @@ public class PacienteServiceImpl implements PacienteService{
     }
 
     @Override
-    public void elimianrRegistro(Paciente paciente) {
-    }
-
-    @Override
-    public List<Paciente> obtenerPacientes() {
-        return null;
-    }
-
-    @Override
-    public Paciente obtenerPaciente(Long idPaciente) {
-        return null;
+    public void eliminarRegistro(Paciente paciente) {
     }
     
+    @Override
+    public List<Paciente> obtenerRegistros() {
+        return null;
+    }
+
+    @Override
+    public Paciente obtenerRegistro(Long idPaciente) {
+        return null;
+    }
+
+    @Override
+    public List<Paciente> obtenerPacientesMayores() {
+        return null;
+    }
 }
