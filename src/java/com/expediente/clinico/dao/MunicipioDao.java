@@ -1,0 +1,6 @@
+
+package com.expediente.clinico.dao;
+
+public interface MunicipioDao {
+    
+}
