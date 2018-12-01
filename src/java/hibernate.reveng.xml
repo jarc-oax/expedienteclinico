@@ -41,8 +41,5 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="expedienteclinico" match-schema="public"/>
-  <table-filter match-name="municipio"/>
-  <table-filter match-name="pais"/>
-  <table-filter match-name="estado"/>
-  <table-filter match-name="localidad"/>
+  <table-filter match-name="paciente"/>
 </hibernate-reverse-engineering>
