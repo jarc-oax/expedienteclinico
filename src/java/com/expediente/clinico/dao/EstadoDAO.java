@@ -13,9 +13,8 @@ import java.util.List;
  * @author JARC
  */
 public interface EstadoDAO {
-    public void crearRegistro(Estado estado);
-    public void actualizarRegistro(Estado estado);
-    public void eliminarRegistro(Estado estado);
-    public Estado obtenerRegistro(Long idEstado);
-    public List<Estado> obtenerRegstros(Long idEstado);
+    public void crearRegistro(Estado registro);
+    public void actualizarRegistro(Estado registro);
+    public void eliminarRegistro(Estado registro);
+    public List<Estado> obtenerRegistros();
 }

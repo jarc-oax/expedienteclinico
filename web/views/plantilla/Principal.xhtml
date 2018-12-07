@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+    <f:view>
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <h:outputStylesheet name="/css/default.css"/>
+            <h:outputStylesheet name="/css/cssLayout.css"/>
+            <h:outputStylesheet name="/css/bootstrap.min.css" />
+            <h:outputStylesheet name="/css/font-awesome.min.css" />
+            <h:outputStylesheet name="/css/estiloPersonalizado.css" />
+            <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+<h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+            <link href="#{request.contextPath}/favicon.ico" rel="shortcut icon" />
+            <title>Tec Web II</title>
+        </h:head>
+
+        <h:body>
+            <div class="section margenes-ventana-principal" id="seccion-principal">
+                <div id="top">
+                    <ui:insert name="top">
+                        <ui:include src="commonHeader.xhtml"></ui:include>
+                    </ui:insert>
+                </div>
+
+                <div id="content" class="center_content">
+                    <ui:insert name="content">Content</ui:insert>
+                </div>
+
+                <div id="bottom">
+                    <ui:insert name="bottom">
+                        <ui:include src="commonFooter.xhtml"></ui:include>
+                    </ui:insert>
+                </div>
+            </div>
+        </h:body>
+    </f:view>
+</html>

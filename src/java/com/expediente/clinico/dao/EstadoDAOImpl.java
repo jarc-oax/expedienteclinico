@@ -1,61 +1,81 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.expediente.clinico.dao;
 
 import com.expediente.clinico.model.Estado;
 import java.util.List;
-import javax.persistence.EntityManager;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
+/**
+ *
+ * @author JARC
+ */
 public class EstadoDAOImpl implements EstadoDAO{
-    
-    
+     private SessionFactory sf;
+    private Session s;
     @Override
-    public void crearRegistro(Estado estado) {
-        EntityManager em = JPAUtility.getEntityManager();
-        em.getTransaction().begin();
-        em.persist(estado);
-        em.getTransaction().commit();
-        em.close();
-        JPAUtility.close();
+    public List<Estado> obtenerRegistros() {
+        try {
+            sf = new Configuration().configure().buildSessionFactory();
+            s = sf.openSession();
+            List<Estado> lista = s.createCriteria(Estado.class).list();
+            s.close();
+            sf.close();
+            return lista;
+        } catch (HibernateException e) {
+            System.out.println("Error al recuperar los registros: " + e.getMessage());
+        }
+        return null;
     }
-
+    
     @Override
     public void actualizarRegistro(Estado estado) {
-        EntityManager em;
-        Estado estadoAntes;
-        em = JPAUtility.getEntityManager(); 
-        estadoAntes = em.find(Estado.class,estado.getId());
-        em.getTransaction().begin();
-        estadoAntes = estado;
-        em.getTransaction().commit();
-        em.close();
-        JPAUtility.close();
-        
+        try {
+            sf = new Configuration().configure().buildSessionFactory();
+            s = sf.openSession();
+            s.beginTransaction();
+            s.update(estado);
+            s.getTransaction().commit();
+            s.close();
+            sf.close();
+        } catch (HibernateException e) {
+            System.out.println("Error al actualizar el registro: " + e.getMessage());
+        }
     }
 
     @Override
     public void eliminarRegistro(Estado estado) {
-        EntityManager em = JPAUtility.getEntityManager();
-        em.remove(estado);
-        em.getTransaction().commit();
-        em.close();
-        JPAUtility.close();
+        try {
+            sf = new Configuration().configure().buildSessionFactory();
+            s = sf.openSession();
+            s.beginTransaction();
+            s.delete(estado);
+            s.getTransaction().commit();
+            s.close();
+            sf.close();
+        } catch (HibernateException e) {
+            System.out.println("Error al elimiar el registro: " + e.getMessage());
+        }
     }
 
     @Override
-    public Estado obtenerRegistro(Long idEstado) {
-        EntityManager em = JPAUtility.getEntityManager();
-        Estado estado;
-        estado = em.find(Estado.class, 1);
-        System.out.println(estado.getNombre());
-        JPAUtility.close();
-        return estado;
+    public void crearRegistro(Estado estado) {
+        try {
+            sf = new Configuration().configure().buildSessionFactory();
+            s = sf.openSession();
+            s.beginTransaction();
+            s.save(estado);
+            s.getTransaction().commit();
+            s.close();
+            sf.close();
+        } catch (HibernateException e) {
+            System.out.println("Error al crear el registro: " + e.getMessage());
+        }
     }
-
-    @Override
-    public List<Estado> obtenerRegstros(Long idEstado) {
-        return null;
-    }
-    
-
-    
 }

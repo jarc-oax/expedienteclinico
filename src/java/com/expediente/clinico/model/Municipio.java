@@ -1,5 +1,5 @@
 package com.expediente.clinico.model;
-// Generated 29/11/2018 10:17:12 PM by Hibernate Tools 4.3.1
+// Generated Dec 5, 2018 6:11:41 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
